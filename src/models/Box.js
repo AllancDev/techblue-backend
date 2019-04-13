@@ -6,7 +6,7 @@ const Box = new mongoose.Schema({
         required: true
     }, 
     
-    files: [{type: mongoose.Schema.Types.ObjectId, ref: "File" }]
+    files: [{type: mongoose.Schema.Types.ObjectId, ref: "file" }]
 }, {
     timestamps: true
 });

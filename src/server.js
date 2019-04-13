@@ -14,10 +14,10 @@ const io = require('socket.io')(server);
 
 
 
-io.on('connection', socket => {
+io.on("connection", socket => {
     socket.on('connectRoom', box => {
         socket.join(box);
-    });
+    })
 });
 
 const conn = "mongodb+srv://admin:admin@cluster0-pxsfz.mongodb.net/db_techblue?retryWrites=true";
@@ -31,10 +31,13 @@ app.use((req, res, next) => {
     return next();
 });
 
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true } ));
 
 
-app.use(require('./routes'));
 app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
+
+app.use(require('./routes'));
 server.listen(process.env.PORT || 3333);

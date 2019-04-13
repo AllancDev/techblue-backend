@@ -14,6 +14,9 @@ class FileController {
 
         await box.save();
 
+
+        req.io.sockets.in(box._id).emit('file', file);
+
         // Criar Arquivo
         return res.json(file);
     }
