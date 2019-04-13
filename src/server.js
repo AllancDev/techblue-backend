@@ -4,12 +4,15 @@ const path = require('path')
 const cors = require('cors');
 
 const app = express();
+app.use(cors());
+
+
+
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 
 
-app.use(cors());
 
 io.on('connection', socket => {
     socket.on('connectRoom', box => {
