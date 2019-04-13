@@ -17,7 +17,7 @@ io.on('connection', socket => {
     });
 });
 
-const conn = "mongodb+srv://admin:admin@cluster0-pxsfz.mongodb.net/test?retryWrites=true";
+const conn = "mongodb+srv://admin:admin@cluster0-pxsfz.mongodb.net/db_techblue?retryWrites=true";
 mongoose.connect(conn,
     { useNewUrlParser: true }
 );
